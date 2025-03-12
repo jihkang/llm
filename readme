@@ -1,3 +1,7 @@
 goal:
     - [ ] Large Language model pure c++ 
 
+
+
+todo: 
+- 3/12 tokenizer parser create. 
