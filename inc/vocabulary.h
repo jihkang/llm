@@ -1,5 +1,8 @@
 #pragma once
 
+#include <vector>
+#include <unordered_map>
+
 namespace vocabulary
 {    
     class VocabularyBuilder
@@ -11,7 +14,11 @@ namespace vocabulary
     public:
         void setVocabulary(std::string str);
         int getVec(std::string);
+    };
 
-
+    class TestVocabularyBuilder
+    {
+    public:
+    static bool run();
     };
 }
