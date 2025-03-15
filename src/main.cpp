@@ -3,7 +3,7 @@
 #include <iostream>
 #include <functional>
 
-std::string runTest(bool (*func)()) {
+std::string runTest(std::function<bool()> func) {
     return func() ? "Success" : "Error";
 }
 
