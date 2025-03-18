@@ -1,8 +1,8 @@
 #include "tokenizer.h"
 #include "vocabulary.h"
+#include "embedding.h"
 #include <iostream>
 #include <functional>
-
 std::string runTest(std::function<bool()> func) {
     return func() ? "Success" : "Error";
 }
@@ -19,6 +19,10 @@ int main() {
         std::cout << runTest(vocabulary::TestVocabularyBuilder::runSkipGram) << std::endl;
     }
     
+    // Embedding 
+    {
+        Embedding emb = Embedding(5, 3);
+    }
 
     return 0;
 }
