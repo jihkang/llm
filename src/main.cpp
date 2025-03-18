@@ -16,7 +16,9 @@ int main() {
     // vocabulary builder;
     {
         std::cout << runTest(vocabulary::TestVocabularyBuilder::run) << std::endl;
+        std::cout << runTest(vocabulary::TestVocabularyBuilder::runSkipGram) << std::endl;
     }
     
+
     return 0;
 }
