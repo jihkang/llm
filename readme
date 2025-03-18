@@ -1,6 +1,8 @@
 goal:
     - [ ] Large Language model pure c++ 
-
+    - [V] tokenizer
+    - [V] SkipGram
+    - [ ] Adam 
 
 
 todo: 
