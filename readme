@@ -5,3 +5,10 @@ goal:
 
 todo: 
 - 3/12 tokenizer parser create. 
+
+1. 데이터 준비	Vocabulary 구축 + Skip-gram 쌍 생성	         ✅ 완료
+2. 단어 임베딩 초기화	embedding_matrix 생성                ✅ 완료
+3. Forward Propagation	Skip-gram을 통한 예측 값 계산       ⏳ 진행 필요
+4. 손실 함수 적용	Softmax + CrossEntropy 적용	            ⏳ 진행 필요
+5. Backpropagation	경사 하강법(SGD/Adam) 적용             ⏳ 진행 필요
+6. 학습 루프 작성	전체 트레이닝 실행	                       ⏳ 진행 필요
