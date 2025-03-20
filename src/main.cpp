@@ -1,6 +1,8 @@
 #include "tokenizer.h"
 #include "vocabulary.h"
 #include "embedding.h"
+#include "learning.h"
+
 #include <iostream>
 #include <functional>
 std::string runTest(std::function<bool()> func) {
@@ -22,6 +24,11 @@ int main() {
     // Embedding 
     {
         Embedding emb = Embedding(5, 3);
+    }
+
+    {
+        Learning learning = Learning("I have a cat but I don't have dog");
+        learning.forward();
     }
 
     return 0;

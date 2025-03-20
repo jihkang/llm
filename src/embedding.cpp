@@ -1,6 +1,9 @@
 #include "embedding.h"
 #include <random>
 #include <iostream>
+#include <cassert>
+
+Embedding::Embedding() {}
 
 Embedding::Embedding(int p, int d) {
     std::random_device rd;
@@ -16,12 +19,20 @@ Embedding::Embedding(int p, int d) {
         }
     }
 
-
-    for (int i = 0; i < p; i ++){
+    for (int i = 0; i < p; i++) {
         for (int j = 0; j < d; j++) {
-            std::string strSeq = j != d - 1 ?  ", " : "\n";
-            std::cout << matrix[i][j] << strSeq;
+            std::string sep = j == d - 1? "\n" : ", ";
+            std::cout << matrix[i][j] << sep;
         }
     }
 }
 
+std::vector<double> Embedding::getParseVector(size_t idx) {
+    // assert(idx >= matrix.size());
+    if (idx >= matrix.size())
+    {
+        throw new std::runtime_error("matrix size over");
+    }
+
+    return matrix[idx];
+}

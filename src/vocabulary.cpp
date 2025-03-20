@@ -1,5 +1,5 @@
 #include "vocabulary.h"
-
+#include <iostream>
 namespace vocabulary
 {   
 void VocabularyBuilder::setVocabulary(const std::string str) {
@@ -14,6 +14,17 @@ int VocabularyBuilder::getVec(const std::string str) {
         return -1;
 
     return vocabulary[str];
+}
+
+int VocabularyBuilder::getSize() {
+    return tokens.size();
+}
+
+std::string VocabularyBuilder::getToken(int idx) {
+    if (idx >= (int)tokens.size())
+        throw std::runtime_error("index overflow");
+
+    return tokens[idx];
 }
 
 std::vector<std::pair<std::string, std::string>> VocabularyBuilder::skipGram(int windowSize) {
@@ -34,24 +45,14 @@ std::vector<std::pair<std::string, std::string>> VocabularyBuilder::skipGram(int
 }
 
 bool TestVocabularyBuilder::run() {
-    std::vector<std::string> tokens;
+    std::vector<std::string> tokens = {
+        "a", "bb", "accc", "bab", "acc", "bcb", "accc", "bb",
+    };
     VocabularyBuilder vocabulary;
 
-    tokens.push_back("a");
-    tokens.push_back("bb");
-    tokens.push_back("accc");
-    tokens.push_back("bab");
-    tokens.push_back("acc");
-    tokens.push_back("bcb");
-    tokens.push_back("accc");
-    tokens.push_back("bb");
-    std::unordered_map<std::string, int> testVoca;
-    testVoca["a"] = 0;
-    testVoca["bb"] = 1;
-    testVoca["accc"] = 2;
-    testVoca["bab"] = 3;
-    testVoca["acc"] = 4;
-    testVoca["bcb"] = 5;
+    std::unordered_map<std::string, int> testVoca = {
+        {"a", 0}, {"bb", 1}, {"accc", 2}, {"bab", 3}, {"acc", 4}, {"bcb", 5},
+    };
 
     for (size_t i = 0; i < tokens.size(); i++) {
         vocabulary.setVocabulary(tokens[i]);

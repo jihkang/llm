@@ -4,6 +4,7 @@
 #include <unordered_map>
 #include <utility>
 
+
 namespace vocabulary
 {    
     class VocabularyBuilder
@@ -16,6 +17,8 @@ namespace vocabulary
     public:
         void setVocabulary(std::string str);
         int getVec(std::string);
+        int getSize();
+        std::string getToken(int idx);
         std::vector<std::pair<std::string, std::string>> skipGram(int windowSize);
     };
 

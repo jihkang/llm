@@ -2,9 +2,8 @@ goal:
     - [ ] Large Language model pure c++ 
 
 
-
 todo: 
-- 3/12 tokenizer parser create. 
+    - 3/12 tokenizer parser create. 
 
 1. 데이터 준비	Vocabulary 구축 + Skip-gram 쌍 생성	         ✅ 완료
 2. 단어 임베딩 초기화	embedding_matrix 생성                ✅ 완료
